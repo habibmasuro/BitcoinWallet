@@ -12,7 +12,7 @@
 $(document).ready(function () {
     var SATOSHIS = 100000000,
     FEE = SATOSHIS * .0001,
-    BTCUnits = 'BTC',
+    BTCUnits = 'MONET',
     BTCMultiplier = SATOSHIS,
     clickX,
     clickY,
@@ -63,7 +63,7 @@ $(document).ready(function () {
     $('body').on('click', 'a', function (e) {
         var href = $(this).attr('href');
         // Regex test for bitcoin pay link
-        if (/^bitcoin:[13][1-9A-HJ-NP-Za-km-z]{26,33}/.test(href)) {
+        if (/^moneta:[13][1-9A-HJ-NP-Za-km-z]{26,33}/.test(href)) {
             var addresses = href.match(/[13][1-9A-HJ-NP-Za-km-z]{26,33}/);
             var address = null;
             if (addresses) {
