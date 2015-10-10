@@ -14,7 +14,7 @@ $(document).ready(function () {
         address = '',
         SATOSHIS = 100000000,
         FEE = SATOSHIS * .0001,
-        BTCUnits = 'BTC',
+        BTCUnits = 'MONET',
         BTCMultiplier = SATOSHIS;
     function setupWallet() {
         wallet.restoreAddress().then(setQRCodes,
@@ -49,9 +49,9 @@ $(document).ready(function () {
 
     function setBTCUnits(units) {
         BTCUnits = units;
-        if (units === 'µBTC') {
+        if (units === 'µMONET') {
             BTCMultiplier = SATOSHIS / 1000000;
-        } else if (units === 'mBTC') {
+        } else if (units === 'mMONET') {
             BTCMultiplier = SATOSHIS / 1000;
         } else {
             BTCMultiplier = SATOSHIS;
@@ -273,7 +273,7 @@ $(document).ready(function () {
      */
     $('#setUnits').click(function () {
         preferences.getBTCUnits().then(function (units) {
-            var availableUnits = ['BTC', 'mBTC', 'µBTC'];
+            var availableUnits = ['MONET', 'mMONET', 'µMONET'];
             var tableBody = '<tr>';
             for (var i = 0; i < availableUnits.length; i++) {
                 tableBody += '<td><div class="radio no-padding"><label><input type="radio" name="' + availableUnits[i] + '"';
